@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Tasks Manager</title>
+    <script src="build/app.js" defer></script> <!-- Link to your JavaScript file -->
+    <script src="build/models/Note.js" defer></script>
+    <script src="build/interfaces/Meeting.js" defer></script>
+    <script src="build/interfaces/SportAndLeisure.js" defer></script>
+    <script src="build/interfaces/Task.js" defer></script>
+    <script src="build/utils/helperFunctions.js" defer></script>
+    <link rel="stylesheet" href="styles.css"> <!-- css קישור לתקיית  -->
+</head>
+<body>
+    <header>
+        <h1>Personal Tasks Manager</h1>
+        <img src="header-image.jpg" alt="Header Image">
+        <button id="edit-mode-toggle">Edit Mode</button>
+    </header>
+
+    <button id="add-note-button" onclick="openAddNoteModal()">Add Note</button>
+
+    <div id="add-note-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <!-- Form for adding/editing notes -->
+          <form id="note-form">
+              <label for="note-title">Title:</label><br>
+              <input type="text" id="note-title" name="note-title" required><br>
+              <label for="note-text">Text:</label><br>
+              <textarea id="note-text" name="note-text" required></textarea><br>
+              <label for="note-image">Image URL:</label><br>
+              <input type="text" id="note-image" name="note-image"><br>
+              <button type="submit">Add Note</button>
+              <button type="button" onclick="clearForm()">Clear Form</button>
+          </form>
+      </div>
+  </div>
+
+  <section id="notes">
+    <!-- Notes will be dynamically rendered here -->
+  </section>
+
+</body>
+</html>
